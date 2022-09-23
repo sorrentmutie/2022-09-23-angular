@@ -1,0 +1,22 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Prezzo</th>
+      <th>Data di uscita</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td>
+      <td>{{product.name  | first: '***' | uppercase}}</td>
+      <td>{{product.price | currency: 'EUR'}}</td>
+      <td>{{product.date | date: 'dd/MM/yyyy'}}</td>
+      <td>{{product | second}}</td>
+      <td><button class="btn btn-success" (click)="doSomething(product)"  >Mostra</button></td>
+    </tr>
+  </tbody>
+</table>

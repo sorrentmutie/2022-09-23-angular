@@ -1,0 +1,13 @@
+<ng-template #noProducts>
+  <p>Non ci sono prodotti in magazzino</p>
+</ng-template>
+
+<p>products-page works!</p>
+
+
+<section *ngIf="prodotti && prodotti.length > 0; else noProducts ">
+  <p> In magazzino ci sono {{prodotti.length}} prodotti</p>
+  <app-products-table  (emitter)="onEmit($event)" [products]="prodotti"></app-products-table>
+</section>
+
+
