@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  productsUrl: "http://localhost:3000/products",
+  reqresUrl: "https://reqres.in/api/users?page=2",
+  reqResPostUrL: "https://reqres.in/api/users"
 };
 
 /*

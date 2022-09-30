@@ -1,0 +1,8 @@
+<p>reqres works!</p>
+<div *ngIf="data | async as d">
+    <div *ngFor="let u of d">
+      <p>{{u.first_name}} {{u.last_name}}</p>
+      <img src="{{u.avatar}}">
+    </div>
+</div>
+<button class="btn btn-success" (click)="postSomeData()">Post some data</button>

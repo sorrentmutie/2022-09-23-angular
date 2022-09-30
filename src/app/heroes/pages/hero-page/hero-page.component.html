@@ -1,0 +1,13 @@
+<h1>Form dell'eroe</h1>
+
+<form #mioForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input [(ngModel)]="hero.name" id="nome" class="form-control" name="nome" type="text" minlength="5" required>
+  </div>
+
+
+  <button type="submit" [disabled]="mioForm.invalid" class="btn btn-success" style="margin-top: 10px">OK</button>
+
+</form>

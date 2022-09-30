@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Product } from '../product';
 
 @Injectable({
@@ -7,7 +10,7 @@ import { Product } from '../product';
 export class ProductsService {
 
   private rnd = 0;
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     this.rnd= Math.random();
     console.log(this.rnd);
   }
@@ -23,6 +26,15 @@ export class ProductsService {
       {id: 2, name: "TV", available: true, date: new Date(), price: 600},
       {id: 3, name: "STEREO", available: true, date: new Date(), price: 600}
     ];
+  }
+
+  getProductsAsObservable(): Observable<Product[]> {
+    return of(this.getProducts());
+  }
+
+  getProductsFromAPI(): Observable<Product[]>
+  {
+      return this.httpClient.get<Product[]>(environment.productsUrl);
   }
 
 
