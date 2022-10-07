@@ -8,7 +8,8 @@ import { Hero } from '../../models/hero';
 })
 export class HeroPageComponent implements OnInit {
 
-  hero = new Hero(1, 'dr. strange', 'magia', 'Salvatore Sorrentino');
+  hero = new Hero(1, 'Dr. Strange', 'Magia', 'Salvatore Sorrentino');
+  powers = ["Magia", "Invisibilità", "Forza" ]
   constructor() { }
 
   ngOnInit(): void {

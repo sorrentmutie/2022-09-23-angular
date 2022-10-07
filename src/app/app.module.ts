@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,11 @@ import { FirstInterceptor } from './reqres/interceptors/first.interceptor';
 import { SecondInterceptor } from './reqres/interceptors/second.interceptor';
 import { ProveInoutComponent } from './shared/prove-inout/prove-inout.component';
 import { HeroPageComponent } from './heroes/pages/hero-page/hero-page.component';
+import { HeroReactiveComponent } from './heroes/pages/hero-reactive/hero-reactive.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { WelcomeComponent } from './shared/welcome/welcome.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { CustomersModule } from './customers/customers.module';
 
 @NgModule({
   declarations: [
@@ -30,11 +35,16 @@ import { HeroPageComponent } from './heroes/pages/hero-page/hero-page.component'
     ObservableProductsComponent,
     ReqresComponent,
     ProveInoutComponent,
-    HeroPageComponent
+    HeroPageComponent,
+    HeroReactiveComponent,
+    NotFoundComponent,
+    WelcomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
